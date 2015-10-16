@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; settings = {ASSET_TAGS = (); }; };
-		9693BFC71BD165FE0087054A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9693BFC61BD165FE0087054A /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; settings = {ASSET_TAGS = (); }; };
-		9693BFD31BD166F50087054A /* ContentKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD21BD166F50087054A /* ContentKit.swift */; settings = {ASSET_TAGS = (); }; };
+		9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD51BD18C5E0087054A /* ContentText.swift */; settings = {ASSET_TAGS = (); }; };
+		9693BFD81BD18CCA0087054A /* ContentTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */; settings = {ASSET_TAGS = (); }; };
+		9693BFDA1BD18D490087054A /* ContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD91BD18D490087054A /* ContentTextView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,9 @@
 		9693BFC91BD166080087054A /* ContentKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentKitTests.swift; sourceTree = "<group>"; };
 		9693BFCA1BD166080087054A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9693BFD11BD1667B0087054A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9693BFD21BD166F50087054A /* ContentKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentKit.swift; sourceTree = "<group>"; };
+		9693BFD51BD18C5E0087054A /* ContentText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentText.swift; sourceTree = "<group>"; };
+		9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextStorage.swift; sourceTree = "<group>"; };
+		9693BFD91BD18D490087054A /* ContentTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,7 @@
 			children = (
 				9693BFD11BD1667B0087054A /* LICENSE */,
 				9693BFD01BD166310087054A /* Supporting Files */,
-				9693BFD21BD166F50087054A /* ContentKit.swift */,
+				9693BFD41BD18C4F0087054A /* Text */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -103,6 +106,16 @@
 				9693BFC61BD165FE0087054A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9693BFD41BD18C4F0087054A /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				9693BFD51BD18C5E0087054A /* ContentText.swift */,
+				9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */,
+				9693BFD91BD18D490087054A /* ContentTextView.swift */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9693BFC71BD165FE0087054A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9693BFD31BD166F50087054A /* ContentKit.swift in Sources */,
+				9693BFD81BD18CCA0087054A /* ContentTextStorage.swift in Sources */,
+				9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */,
+				9693BFDA1BD18D490087054A /* ContentTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
