@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9688D06A1BD4249700A70097 /* Content+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; settings = {ASSET_TAGS = (); }; };
 		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; settings = {ASSET_TAGS = (); }; };
 		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; settings = {ASSET_TAGS = (); }; };
 		9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD51BD18C5E0087054A /* ContentText.swift */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9688D0691BD4249700A70097 /* Content+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Content+String.swift"; sourceTree = "<group>"; };
 		9693BFAB1BD165AC0087054A /* ContentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ContentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9693BFB51BD165AC0087054A /* ContentKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContentKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9693BFC61BD165FE0087054A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9688D0681BD4247F00A70097 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9688D0691BD4249700A70097 /* Content+String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9693BFA11BD165AC0087054A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 			children = (
 				9693BFD11BD1667B0087054A /* LICENSE */,
 				9693BFD01BD166310087054A /* Supporting Files */,
+				9688D0681BD4247F00A70097 /* Extensions */,
 				9693BFD41BD18C4F0087054A /* Text */,
 			);
 			path = Source;
@@ -225,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9688D06A1BD4249700A70097 /* Content+String.swift in Sources */,
 				9693BFD81BD18CCA0087054A /* ContentTextStorage.swift in Sources */,
 				9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */,
 				9693BFDA1BD18D490087054A /* ContentTextView.swift in Sources */,

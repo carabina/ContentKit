@@ -72,9 +72,16 @@ public class ContentText: NSObject {
 	*/
 	public var matches: Array<String> {
 		let results: Array<NSTextCheckingResult> = textStorage.expression!.matchesInString(string, options: [], range: NSMakeRange(0, string.utf16.count))
-		return unique(results.map {
-			(self.string as NSString).substringWithRange($0.range)
-		})
+		return results.map {
+			(self.string as NSString).substringWithRange($0.range).trim()
+		}
+	}
+	
+	/**
+		:name:	uniqueMatches
+	*/
+	public var uniqueMatches: Array<String> {
+		return unique(matches)
 	}
 	
 	/**
