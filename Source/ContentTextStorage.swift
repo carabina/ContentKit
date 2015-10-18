@@ -18,8 +18,8 @@
 
 import UIKit
 
-internal typealias ContentTextStorageWillProcessEdit = (ContentTextStorage, String, NSRange) -> Void
-internal typealias ContentTextStorageDidProcessEdit = (ContentTextStorage, NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void
+internal typealias ContentWillProcessEdit = (ContentTextStorage, String, NSRange) -> Void
+internal typealias ContentDidProcessEdit = (ContentTextStorage, NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void
 
 public class ContentTextStorage: NSTextStorage {
 	/**
@@ -33,14 +33,14 @@ public class ContentTextStorage: NSTextStorage {
 	internal var expression: NSRegularExpression?
 	
 	/**
-		:name:	textStorageWillProcessEdit
+		:name:	contentWillProcessEdit
 	*/
-	internal var textStorageWillProcessEdit: ContentTextStorageWillProcessEdit?
+	internal var contentWillProcessEdit: ContentWillProcessEdit?
 	
 	/**
-		:name:	textStorageDidProcessEdit
+		:name:	contentDidProcessEdit
 	*/
-	internal var textStorageDidProcessEdit: ContentTextStorageDidProcessEdit?
+	internal var contentDidProcessEdit: ContentDidProcessEdit?
 	
 	/**
 		:name:	init
@@ -70,9 +70,9 @@ public class ContentTextStorage: NSTextStorage {
 	*/
 	public override func processEditing() {
 		let range: NSRange = (string as NSString).paragraphRangeForRange(editedRange)
-		textStorageWillProcessEdit?(self, string, range)
+		contentWillProcessEdit?(self, string, range)
 		expression!.enumerateMatchesInString(string, options: [], range: range) { (result: NSTextCheckingResult?, flags: NSMatchingFlags, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-			self.textStorageDidProcessEdit?(self, result, flags, stop)
+			self.contentDidProcessEdit?(self, result, flags, stop)
 		}
 		super.processEditing()
 	}

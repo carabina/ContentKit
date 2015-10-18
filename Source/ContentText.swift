@@ -20,8 +20,8 @@ import UIKit
 
 @objc(ContentTextDelegate)
 public protocol ContentTextDelegate {
-	optional func textStorageWillProcessEdit(text: ContentText, textStorage: ContentTextStorage, string: String, range: NSRange)
-	optional func textStorageDidProcessEdit(text: ContentText, textStorage: ContentTextStorage, string: String, result: NSTextCheckingResult?, flags: NSMatchingFlags, stop: UnsafeMutablePointer<ObjCBool>)
+	optional func contentWillProcessEdit(text: ContentText, textStorage: ContentTextStorage, string: String, range: NSRange)
+	optional func contentDidProcessEdit(text: ContentText, textStorage: ContentTextStorage, string: String, result: NSTextCheckingResult?, flags: NSMatchingFlags, stop: UnsafeMutablePointer<ObjCBool>)
 }
 
 @objc(ContentText)
@@ -52,11 +52,11 @@ public class ContentText: NSObject {
 		textStorage = ContentTextStorage()
 		super.init()
 		textStorage.expression = try? NSRegularExpression(pattern: pattern, options: [])
-		textStorage.textStorageWillProcessEdit = { (textStorage: ContentTextStorage, string: String, range: NSRange) -> Void in
-			self.delegate?.textStorageWillProcessEdit?(self, textStorage: textStorage, string: string, range: range)
+		textStorage.contentWillProcessEdit = { (textStorage: ContentTextStorage, string: String, range: NSRange) -> Void in
+			self.delegate?.contentWillProcessEdit?(self, textStorage: textStorage, string: string, range: range)
 		}
-		textStorage.textStorageDidProcessEdit = { (textStorage: ContentTextStorage, result: NSTextCheckingResult?, flags: NSMatchingFlags, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-			self.delegate?.textStorageDidProcessEdit?(self, textStorage: textStorage, string: textStorage.string, result: result, flags: flags, stop: stop)
+		textStorage.contentDidProcessEdit = { (textStorage: ContentTextStorage, result: NSTextCheckingResult?, flags: NSMatchingFlags, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+			self.delegate?.contentDidProcessEdit?(self, textStorage: textStorage, string: textStorage.string, result: result, flags: flags, stop: stop)
 		}
 	}
 	
@@ -64,19 +64,17 @@ public class ContentText: NSObject {
 		:name:	string
 	*/
 	public var string: String {
-		get {
-			return textStorage.string
-		}
+		return textStorage.string
 	}
 	
 	/**
 		:name:	matches
 	*/
 	public var matches: Array<String> {
-		get {
-			let results: Array<NSTextCheckingResult> = textStorage.expression!.matchesInString(string, options: [], range: NSMakeRange(0, string.utf16.count))
-			return unique(results.map {(self.string as NSString).substringWithRange($0.range)})
-		}
+		let results: Array<NSTextCheckingResult> = textStorage.expression!.matchesInString(string, options: [], range: NSMakeRange(0, string.utf16.count))
+		return unique(results.map {
+			(self.string as NSString).substringWithRange($0.range)
+		})
 	}
 	
 	/**
