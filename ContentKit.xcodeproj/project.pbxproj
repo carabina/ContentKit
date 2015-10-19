@@ -12,7 +12,6 @@
 		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; settings = {ASSET_TAGS = (); }; };
 		9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD51BD18C5E0087054A /* ContentText.swift */; settings = {ASSET_TAGS = (); }; };
 		9693BFD81BD18CCA0087054A /* ContentTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */; settings = {ASSET_TAGS = (); }; };
-		9693BFDA1BD18D490087054A /* ContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFD91BD18D490087054A /* ContentTextView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,6 @@
 		9693BFD11BD1667B0087054A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9693BFD51BD18C5E0087054A /* ContentText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentText.swift; sourceTree = "<group>"; };
 		9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextStorage.swift; sourceTree = "<group>"; };
-		9693BFD91BD18D490087054A /* ContentTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 			children = (
 				9693BFD51BD18C5E0087054A /* ContentText.swift */,
 				9693BFD71BD18CCA0087054A /* ContentTextStorage.swift */,
-				9693BFD91BD18D490087054A /* ContentTextView.swift */,
 			);
 			name = Text;
 			sourceTree = "<group>";
@@ -239,7 +236,6 @@
 				9688D06A1BD4249700A70097 /* Content+String.swift in Sources */,
 				9693BFD81BD18CCA0087054A /* ContentTextStorage.swift in Sources */,
 				9693BFD61BD18C5E0087054A /* ContentText.swift in Sources */,
-				9693BFDA1BD18D490087054A /* ContentTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

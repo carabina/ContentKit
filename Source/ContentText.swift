@@ -71,8 +71,7 @@ public class ContentText: NSObject {
 		:name:	matches
 	*/
 	public var matches: Array<String> {
-		let results: Array<NSTextCheckingResult> = textStorage.expression!.matchesInString(string, options: [], range: NSMakeRange(0, string.utf16.count))
-		return results.map {
+		return textStorage.expression!.matchesInString(string, options: [], range: NSMakeRange(0, string.utf16.count)).map {
 			(self.string as NSString).substringWithRange($0.range).trim()
 		}
 	}
