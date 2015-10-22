@@ -8,10 +8,30 @@ ContentKit is on CocoaPods under the name [CK](https://cocoapods.org/?q=CK).
 
 Images come in all shapes and sizes. UIImage resize is a flexible way to resize images on the fly. The below example shows you how.
 
+![MKPreview](http://www.materialkit.io/github/contentkit/vid1.gif)
+
 ```swift
 let p1: UIImage? = UIImage(named: "img1")
-let p2: UIImage? = p1?.resize(toWidth: 400)
-let p3: UIImage? = p1?.resize(toHeight: 400)
+let p2: UIImage? = p1?.resize(toWidth: 275)
+let p3: UIImage? = p1?.resize(toHeight: 175)
+let p4: UIImage? = p1?.resize(toWidth: 75)
+
+// Display with MaterialKit.
+let v1: MaterialView = MaterialView(frame: CGRectMake(50, 50, p2!.width, p2!.height))
+v1.image = p2
+
+// Add to UIViewController.
+view.addSubview(v1)
+
+let v2: MaterialView = MaterialView(frame: CGRectMake(100, p2!.height + 75, p3!.width, p3!.height))
+v2.image = p3
+
+view.addSubview(v2)
+
+let v3: MaterialView = MaterialView(frame: CGRectMake(150, p2!.height + p3!.height + 100, p4!.width, p4!.height))
+v3.image = p4
+
+view.addSubview(v3)
 ```
 
 ### Crop UIImage

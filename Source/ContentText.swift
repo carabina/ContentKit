@@ -88,6 +88,6 @@ public class ContentText: NSObject {
 	*/
 	private func unique<S: SequenceType, E: Hashable where E == S.Generator.Element>(source: S) -> [E] {
 		var seen: [E:Bool] = [:]
-		return source.filter {nil == seen.updateValue(true, forKey: $0)}
+		return source.filter { nil == seen.updateValue(true, forKey: $0) }
 	}
 }
