@@ -4,7 +4,7 @@
 
 ContentKit is on CocoaPods under the name [CK](https://cocoapods.org/?q=CK).
 
-### Resize UIImage
+### Resize Image
 
 Images come in all shapes and sizes. UIImage resize is a flexible way to resize images on the fly. The below example shows you how.
 
@@ -14,7 +14,7 @@ let p2: UIImage? = p1?.resize(toWidth: 300)
 let p3: UIImage? = p1?.resize(toHeight: 200)
 ```
 
-### Crop UIImage
+### Crop Image
 
 Crop images easily with UIImage crop. Below is an example:
 
