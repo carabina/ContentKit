@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		961200A21BD8673000C449A6 /* Content+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961200A11BD8673000C449A6 /* Content+UIImage.swift */; settings = {ASSET_TAGS = (); }; };
+		961200A21BD8673000C449A6 /* Content+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961200A11BD8673000C449A6 /* Content+UIImage.swift */; };
 		961200A31BD8B90100C449A6 /* Content+UIImage.swift in Headers */ = {isa = PBXBuildFile; fileRef = 961200A11BD8673000C449A6 /* Content+UIImage.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		961200A41BD8B90100C449A6 /* Content+String.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		963332C01BD8CA6B007EA891 /* ContentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963332BF1BD8CA6B007EA891 /* ContentText.swift */; settings = {ASSET_TAGS = (); }; };
-		963332C21BD8CA7A007EA891 /* ContentTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963332C11BD8CA7A007EA891 /* ContentTextStorage.swift */; settings = {ASSET_TAGS = (); }; };
-		9688D06A1BD4249700A70097 /* Content+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; settings = {ASSET_TAGS = (); }; };
-		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; settings = {ASSET_TAGS = (); }; };
-		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; settings = {ASSET_TAGS = (); }; };
+		963332C01BD8CA6B007EA891 /* ContentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963332BF1BD8CA6B007EA891 /* ContentText.swift */; };
+		963332C21BD8CA7A007EA891 /* ContentTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963332C11BD8CA7A007EA891 /* ContentTextStorage.swift */; };
+		9688D06A1BD4249700A70097 /* Content+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; };
+		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; };
+		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
