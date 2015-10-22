@@ -44,7 +44,7 @@ public extension String {
 		:name:	replaceNewLineCharater
 	*/
 	public func replaceNewLineCharater(replace: String = " ") -> String {
-		return componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).joinWithSeparator(replace)
+		return componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).joinWithSeparator(replace).trim()
 	}
 	
 	/**

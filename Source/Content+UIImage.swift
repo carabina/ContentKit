@@ -17,16 +17,10 @@
 //
 
 import UIKit
-import AssetsLibrary
 
 public enum ContentImageFormatType {
 	case PNG
 	case JPEG
-}
-
-@objc(ContentImageDelegate)
-public protocol ContentImageDelegate {
-	
 }
 
 public extension UIImage {
@@ -45,9 +39,9 @@ public extension UIImage {
 	}
 	
 	/**
-		:name:	resize
+		:name:	internalResize
 	*/
-	public func resize(var toWidth w: CGFloat = 0, var toHeight h: CGFloat = 0) -> UIImage? {
+	private func internalResize(var toWidth w: CGFloat = 0, var toHeight h: CGFloat = 0) -> UIImage? {
 		if 0 < w {
 			h = height * w / width
 		} else if 0 < h {
@@ -62,6 +56,20 @@ public extension UIImage {
 		UIGraphicsEndImageContext()
 		
 		return g
+	}
+	
+	/**
+		:name:	resize
+	*/
+	public func resize(toWidth w: CGFloat) -> UIImage? {
+		return internalResize(toWidth: w)
+	}
+	
+	/**
+		:name:	resize
+	*/
+	public func resize(toHeight h: CGFloat) -> UIImage? {
+		return internalResize(toHeight: h)
 	}
 	
 	/**
@@ -85,46 +93,9 @@ public extension UIImage {
 	}
 	
 	/**
-		:name:	saveToFile
-	*/
-	public func saveToFile(path: String, format: ContentImageFormatType, quality: CGFloat = 1) -> Bool {
-		do {
-			let documentsDirectory: String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-			try NSFileManager.defaultManager().createDirectoryAtPath(documentsDirectory, withIntermediateDirectories: true, attributes: nil)
-			let url: NSURL = NSURL.fileURLWithPath(documentsDirectory + "/" + path, isDirectory: false)
-			
-			if let v = url.path {
-				try toNSData(format, quality: quality)?.writeToFile(v, options: .DataWritingAtomic)
-				return true
-			}
-		} catch {}
-		return false
-	}
-	
-	/**
-		:name:	toNSData
-	*/
-	public func toNSData(format: ContentImageFormatType, quality: CGFloat = 1) -> NSData? {
-		switch format {
-		case .JPEG:
-			return UIImageJPEGRepresentation(self, quality)
-		case .PNG:
-			return UIImagePNGRepresentation(self)
-		}
-	}
-	
-	/**
 		:name:	writeToPhotoLibrary
 	*/
-	public func writeToPhotoLibrary(completion: ((path: NSURL!, error: NSError?) -> Void)? = nil) {
+	public func writeToPhotoLibrary() {
 		UIImageWriteToSavedPhotosAlbum(self, self, nil, nil)
-	}
-	
-	/**
-		:name:	writeToAssetsLibrary
-	*/
-	public func writeToAssetsLibrary(completion: ((path: NSURL!, error: NSError?) -> Void)? = nil) {
-		let library: ALAssetsLibrary = ALAssetsLibrary()
-		library.writeImageToSavedPhotosAlbum(CGImage, orientation: ALAssetOrientation(rawValue: imageOrientation.rawValue)!, completionBlock: completion)
 	}
 }
