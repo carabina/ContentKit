@@ -29,7 +29,7 @@ Keep the moment by saving your images to Photo Library. Below is an example of c
 
 ```swift
 let p: UIImage? = UIImage(named: "img1")
-p?.crop(toWidth: 300, toHeight: 75)?.writeToPhotoLibrary()
+p?.writeToPhotoLibrary()
 ```
 
 ### Lines of Text
