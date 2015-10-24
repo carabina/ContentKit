@@ -1,51 +1,51 @@
 //
-//  File.swift
-//  ContentKit
+// Copyright (C) 2015 GraphKit, Inc. <http://graphkit.io> and other GraphKit contributors.
 //
-//  Created by Adam Dahan on 2015-10-23.
-//  Copyright © 2015 GraphKit Inc. All rights reserved.
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program located at the root of the software package
+// in a file called LICENSE.  If not, see <http://www.gnu.org/licenses/>.
 //
 
 import Foundation
 
-public class File {
+public struct File {
     /**
-    :name:	path to documents directory
+		:name:	path to documents directory
     */
-    public static func documentsDirectoryPath() -> NSURL? {
-        return pathForDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
-    }
+	public static let documentsDirectoryPath: NSURL? = File.pathForDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
     
     /**
-    :name:	path to application directory
+		:name:	path to application directory
     */
-    public static func applicationDirectoryPath() -> NSURL? {
-        return pathForDirectory(.ApplicationDirectory, domainMask: .UserDomainMask)
-    }
+	public static let applicationDirectoryPath: NSURL? = File.pathForDirectory(.ApplicationDirectory, domainMask: .UserDomainMask)
     
     /**
-    :name:	path to library directory
+		:name:	path to library directory
     */
-    public static func libraryDirectoryPath() -> NSURL? {
-        return pathForDirectory(.LibraryDirectory, domainMask: .UserDomainMask)
-    }
+	public static let libraryDirectoryPath: NSURL? = File.pathForDirectory(.LibraryDirectory, domainMask: .UserDomainMask)
     
     /**
-    :name:	path to caches directory
+		:name:	path to caches directory
     */
-    public static func cachesDirectoryPath() -> NSURL? {
-        return pathForDirectory(.CachesDirectory, domainMask: .UserDomainMask)
-    }
+	public static let cachesDirectoryPath: NSURL? = File.pathForDirectory(.CachesDirectory, domainMask: .UserDomainMask)
     
     /**
-    :name:	path to temp directory
+		:name:	path to temp directory
     */
-    public static func tmpDirectoryPath() -> NSURL? {
-        return NSURL(string: NSTemporaryDirectory())
-    }
+	public static let tmpDirectoryPath: NSURL? = NSURL(string: NSTemporaryDirectory())
     
     /**
-    :name:	create directory with name in directory
+		:name:	create directory with name in directory
     */
     public static func createDirectory(name: String, inDirectory directory: NSSearchPathDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
@@ -60,7 +60,7 @@ public class File {
     }
     
     /**
-    :name:	remove directory with name in directory
+		:name:	remove directory with name in directory
     */
     public static func removeDirectory(name: String, inDirectory directory: NSSearchPathDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
@@ -75,30 +75,27 @@ public class File {
     }
     
     /**
-    :name:	path for directory name
+		:name:	path for directory name
     */
     public static func path(name: String, inDirectory directory: NSSearchPathDirectory) -> NSURL? {
         switch(directory) {
         case .DocumentDirectory:
-            return documentsDirectoryPath()
+            return File.documentsDirectoryPath
         case .ApplicationDirectory:
-            return applicationDirectoryPath()
+            return File.applicationDirectoryPath
         case .LibraryDirectory:
-            return libraryDirectoryPath()
+            return File.libraryDirectoryPath
         case .CachesDirectory:
-            return cachesDirectoryPath()
+            return File.cachesDirectoryPath
         default:
             return nil
         }
     }
     
     /**
-    :name:	helper for getting paths to directories.
+		:name:	helper for getting paths to directories.
     */
     public static func pathForDirectory(searchPath: NSSearchPathDirectory, domainMask: NSSearchPathDomainMask) -> NSURL? {
-        if let path = try? NSFileManager().URLForDirectory(searchPath, inDomain: domainMask, appropriateForURL: nil, create: true) {
-            return path
-        }
-        return nil
+        return try? NSFileManager().URLForDirectory(searchPath, inDomain: domainMask, appropriateForURL: nil, create: true)
     }
 }

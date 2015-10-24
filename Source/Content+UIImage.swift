@@ -95,7 +95,7 @@ public extension UIImage {
 	/**
 		:name:	writeToPhotoLibrary
 	*/
-	public func writeToPhotoLibrary(target: AnyObject? = nil, selector: String = "image:didFinishSavingWithError:contextInfo:") {
+	public func writeToPhotoLibrary(target: AnyObject? = nil, selector: String = "image:finishedSavingWithError:contextInfo:") {
 		UIImageWriteToSavedPhotosAlbum(self, target, Selector(selector), nil)
 	}
 }

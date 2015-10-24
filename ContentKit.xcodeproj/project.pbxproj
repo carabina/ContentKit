@@ -15,7 +15,7 @@
 		9688D06A1BD4249700A70097 /* Content+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; };
 		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; };
 		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; };
-		9AC1B8D91BDB06D900DFBDC3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1B8D81BDB06D900DFBDC3 /* File.swift */; settings = {ASSET_TAGS = (); }; };
+		9AC1B8D91BDB06D900DFBDC3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1B8D81BDB06D900DFBDC3 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +78,14 @@
 			name = Text;
 			sourceTree = "<group>";
 		};
+		9657F8E21BDC43500014B051 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				9AC1B8D81BDB06D900DFBDC3 /* File.swift */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
 		9688D0681BD4247F00A70097 /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +120,7 @@
 				961200A01BD865E100C449A6 /* Image */,
 				9688D0681BD4247F00A70097 /* String */,
 				963332BE1BD8CA5C007EA891 /* Text */,
-				9AC1B8D81BDB06D900DFBDC3 /* File.swift */,
+				9657F8E21BDC43500014B051 /* File */,
 			);
 			path = Source;
 			sourceTree = "<group>";
