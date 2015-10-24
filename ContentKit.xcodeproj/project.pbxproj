@@ -15,6 +15,7 @@
 		9688D06A1BD4249700A70097 /* Content+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D0691BD4249700A70097 /* Content+String.swift */; };
 		9693BFB61BD165AC0087054A /* ContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BFAB1BD165AC0087054A /* ContentKit.framework */; };
 		9693BFCB1BD166080087054A /* ContentKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693BFC91BD166080087054A /* ContentKitTests.swift */; };
+		9AC1B8D91BDB06D900DFBDC3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1B8D81BDB06D900DFBDC3 /* File.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9693BFC91BD166080087054A /* ContentKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentKitTests.swift; sourceTree = "<group>"; };
 		9693BFCA1BD166080087054A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9693BFD11BD1667B0087054A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9AC1B8D81BDB06D900DFBDC3 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				961200A01BD865E100C449A6 /* Image */,
 				9688D0681BD4247F00A70097 /* String */,
 				963332BE1BD8CA5C007EA891 /* Text */,
+				9AC1B8D81BDB06D900DFBDC3 /* File.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC1B8D91BDB06D900DFBDC3 /* File.swift in Sources */,
 				963332C21BD8CA7A007EA891 /* ContentTextStorage.swift in Sources */,
 				9688D06A1BD4249700A70097 /* Content+String.swift in Sources */,
 				963332C01BD8CA6B007EA891 /* ContentText.swift in Sources */,
