@@ -23,41 +23,41 @@ internal typealias ContentDidProcessEdit = (ContentTextStorage, NSTextCheckingRe
 
 public class ContentTextStorage: NSTextStorage {
 	/**
-	:name:	store
+		:name:	store
 	*/
 	private lazy var store: NSMutableAttributedString = NSMutableAttributedString()
 	
 	/**
-	:name:	expression
+		:name:	expression
 	*/
 	internal var expression: NSRegularExpression?
 	
 	/**
-	:name:	contentWillProcessEdit
+		:name:	contentWillProcessEdit
 	*/
 	internal var contentWillProcessEdit: ContentWillProcessEdit?
 	
 	/**
-	:name:	contentDidProcessEdit
+		:name:	contentDidProcessEdit
 	*/
 	internal var contentDidProcessEdit: ContentDidProcessEdit?
 	
 	/**
-	:name:	init
+		:name:	init
 	*/
 	public required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
 	
 	/**
-	:name:	init
+		:name:	init
 	*/
 	public override init() {
 		super.init()
 	}
 	
 	/**
-	:name:	string
+		:name:	string
 	*/
 	override public var string: String {
 		get {
@@ -66,7 +66,7 @@ public class ContentTextStorage: NSTextStorage {
 	}
 	
 	/**
-	:name:	processEditing
+		:name:	processEditing
 	*/
 	public override func processEditing() {
 		let range: NSRange = (string as NSString).paragraphRangeForRange(editedRange)
@@ -78,14 +78,14 @@ public class ContentTextStorage: NSTextStorage {
 	}
 	
 	/**
-	:name:	attributesAtIndex
+		:name:	attributesAtIndex
 	*/
 	public override func attributesAtIndex(location: Int, effectiveRange range: NSRangePointer) -> [String : AnyObject] {
 		return store.attributesAtIndex(location, effectiveRange: range)
 	}
 	
 	/**
-	:name:	replaceCharactersInRange
+		:name:	replaceCharactersInRange
 	*/
 	public override func replaceCharactersInRange(range: NSRange, withString str: String) {
 		store.replaceCharactersInRange(range, withString: str)
@@ -93,7 +93,7 @@ public class ContentTextStorage: NSTextStorage {
 	}
 	
 	/**
-	:name:	setAttributes
+		:name:	setAttributes
 	*/
 	public override func setAttributes(attrs: [String : AnyObject]?, range: NSRange) {
 		store.setAttributes(attrs, range: range)
