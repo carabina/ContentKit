@@ -57,6 +57,36 @@ let text: String = "     \n  Hello World    \n     "
 print(text.trim()) // output: Hello World
 ```
 
+### File System
+
+Get helpful directories.
+
+```swift
+print(File.applicationDirectoryPath) // output: ../Applications/
+print(File.documentDirectoryPath) // output: ../Documents/
+print(File.libraryDirectoryPath) // output: ../Library/
+print(File.cachesDirectoryPath) // output: ../Library/Caches/
+print(File.tmpDirectoryPath)  // output: ../tmp/
+```
+
+### Create Directory
+
+Easily create directories in different search paths.
+
+```swift
+let result: Bool = File.createDirectory("TestDirectory/", inDirectory: .DocumentDirectory)
+print(result) // output: true
+```
+
+### Remove Directory
+
+As simple as it is to create a directory, it is to remove it.
+
+```swift
+let result: Bool = File.removeDirectory("TestDirectory", inDirectory: .DocumentDirectory)
+print(result) // output: true
+```
+
 ### License
 
 [AGPLv3](http://choosealicense.com/licenses/agpl-3.0/)

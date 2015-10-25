@@ -18,17 +18,25 @@
 
 import Foundation
 
+public enum FileDirectory {
+	case ApplicationDirectory
+	case DocumentDirectory
+	case LibraryDirectory
+	case CachesDirectory
+	case TmpDirectory
+}
+
 public struct File {
-    /**
+	/**
+		:name:	path to applications directory
+	*/
+	public static let applicationDirectoryPath: NSURL? = File.pathForDirectory(.ApplicationDirectory, domainMask: .UserDomainMask)
+	
+	/**
 		:name:	path to documents directory
     */
-	public static let documentsDirectoryPath: NSURL? = File.pathForDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
-    
-    /**
-		:name:	path to application directory
-    */
-	public static let applicationDirectoryPath: NSURL? = File.pathForDirectory(.ApplicationDirectory, domainMask: .UserDomainMask)
-    
+	public static let documentDirectoryPath: NSURL? = File.pathForDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
+	
     /**
 		:name:	path to library directory
     */
@@ -47,7 +55,7 @@ public struct File {
     /**
 		:name:	create directory with name in directory
     */
-    public static func createDirectory(name: String, inDirectory directory: NSSearchPathDirectory) -> Bool {
+    public static func createDirectory(name: String, inDirectory directory: FileDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
             do {
                 try NSFileManager.defaultManager().createDirectoryAtPath(fullPath.path!, withIntermediateDirectories: true, attributes: nil)
@@ -62,7 +70,7 @@ public struct File {
     /**
 		:name:	remove directory with name in directory
     */
-    public static func removeDirectory(name: String, inDirectory directory: NSSearchPathDirectory) -> Bool {
+    public static func removeDirectory(name: String, inDirectory directory: FileDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
             do {
                 try NSFileManager().removeItemAtURL(fullPath)
@@ -77,18 +85,18 @@ public struct File {
     /**
 		:name:	path for directory name
     */
-    public static func path(name: String, inDirectory directory: NSSearchPathDirectory) -> NSURL? {
+    public static func path(name: String, inDirectory directory: FileDirectory) -> NSURL? {
         switch(directory) {
-        case .DocumentDirectory:
-            return File.documentsDirectoryPath
         case .ApplicationDirectory:
             return File.applicationDirectoryPath
-        case .LibraryDirectory:
+		case .DocumentDirectory:
+			return File.documentDirectoryPath
+		case .LibraryDirectory:
             return File.libraryDirectoryPath
         case .CachesDirectory:
             return File.cachesDirectoryPath
-        default:
-            return nil
+		case .TmpDirectory:
+            return File.tmpDirectoryPath
         }
     }
     
