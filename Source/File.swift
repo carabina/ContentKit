@@ -28,32 +28,32 @@ public enum FileDirectory {
 
 public struct File {
 	/**
-		:name:	path to applications directory
+		:name:	applicationDirectoryPath
 	*/
 	public static let applicationDirectoryPath: NSURL? = File.pathForDirectory(.ApplicationDirectory, domainMask: .UserDomainMask)
 	
 	/**
-		:name:	path to documents directory
+		:name:	documentDirectoryPath
     */
 	public static let documentDirectoryPath: NSURL? = File.pathForDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
 	
     /**
-		:name:	path to library directory
+		:name:	libraryDirectoryPath
     */
 	public static let libraryDirectoryPath: NSURL? = File.pathForDirectory(.LibraryDirectory, domainMask: .UserDomainMask)
     
     /**
-		:name:	path to caches directory
+		:name:	cachesDirectoryPath
     */
 	public static let cachesDirectoryPath: NSURL? = File.pathForDirectory(.CachesDirectory, domainMask: .UserDomainMask)
     
     /**
-		:name:	path to temp directory
+		:name:	tmpDirectoryPath
     */
 	public static let tmpDirectoryPath: NSURL? = NSURL(string: NSTemporaryDirectory())
     
     /**
-		:name:	create directory with name in directory
+		:name:	createDirectory
     */
     public static func createDirectory(name: String, inDirectory directory: FileDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
@@ -68,7 +68,7 @@ public struct File {
     }
     
     /**
-		:name:	remove directory with name in directory
+		:name:	removeDirectory
     */
     public static func removeDirectory(name: String, inDirectory directory: FileDirectory) -> Bool {
         if let fullPath = path(name, inDirectory: directory)?.URLByAppendingPathComponent(name) {
@@ -83,7 +83,7 @@ public struct File {
     }
     
     /**
-		:name:	path for directory name
+		:name:	path
     */
     public static func path(name: String, inDirectory directory: FileDirectory) -> NSURL? {
         switch(directory) {
