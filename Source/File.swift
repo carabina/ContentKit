@@ -101,7 +101,7 @@ public struct File {
     }
     
     /**
-		:name:	helper for getting paths to directories.
+		:name:	pathForDirectory
     */
     public static func pathForDirectory(searchPath: NSSearchPathDirectory, domainMask: NSSearchPathDomainMask) -> NSURL? {
         return try? NSFileManager().URLForDirectory(searchPath, inDomain: domainMask, appropriateForURL: nil, create: true)
