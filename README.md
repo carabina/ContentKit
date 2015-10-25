@@ -74,7 +74,7 @@ print(File.tmpDirectoryPath)  // output: ../tmp/
 Easily create directories in different search paths.
 
 ```swift
-let result: Bool = File.createDirectory("TestDirectory/", inDirectory: .DocumentDirectory)
+let result: Bool = File.createDirectory("TestDirectory", inDirectory: .DocumentDirectory)
 print(result) // output: true
 ```
 
